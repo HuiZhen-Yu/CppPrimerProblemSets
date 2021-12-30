@@ -1,0 +1,28 @@
+{
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "task g++",    //任务的名字
+            "command": "C:\\mingw64\\bin\\g++.exe",
+            "args": [       //编译时候的参数
+                "-fdiagnostics-color=always",
+                "-g",       //添加gdb调试选项
+                "${file}",
+                "-o",       //指定生成可执行文件的名称
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true   //表示快捷键ctrl+shift+b可以运行这个任务
+            },
+            "detail": "调试器生成的任务。",
+        }
+    ],
+    "version": "2.0.0"
+}
